@@ -46,7 +46,6 @@ module.exports = function(app,io){
 				socket.emit('peopleinchat', {number: 0});
 			}
 			else if(room.length === 1) {
-
 				socket.emit('peopleinchat', {
 					number: 1,
 					user: room[0].username,
@@ -55,7 +54,6 @@ module.exports = function(app,io){
 				});
 			}
 			else if(room.length > 3) {
-
 				chat.emit('tooMany', {boolean: true});
 			}
 		});
@@ -82,7 +80,7 @@ module.exports = function(app,io){
 				// Add the client to the room
 				socket.join(data.id);
 
-				if (room.length == 1) {
+				if (room.length == 2) {
 
 					var usernames = [],
 						avatars = [];
