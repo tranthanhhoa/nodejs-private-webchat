@@ -54,7 +54,7 @@ module.exports = function(app,io){
 					id: data
 				});
 			}
-			else if(room.length >= 3) {
+			else if(room.length > 3) {
 
 				chat.emit('tooMany', {boolean: true});
 			}
