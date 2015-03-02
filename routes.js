@@ -64,7 +64,7 @@ module.exports = function(app,io){
 
 			var room = findClientsSocket(io, data.id, '/socket');
 			// Only two people per room are allowed
-			if (room.length < 3) {
+			if (room.length < 4) {
 
 				// Use the socket object to store data. Each client gets
 				// their own unique socket object
@@ -80,7 +80,7 @@ module.exports = function(app,io){
 				// Add the client to the room
 				socket.join(data.id);
 
-				if (room.length == 2) {
+				if (room.length == 1) {
 
 					var usernames = [],
 						avatars = [];
